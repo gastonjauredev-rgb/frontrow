@@ -1,0 +1,131 @@
+/* =========================================
+   FRONTROW — NOT FOUND (404)
+   ========================================= */
+
+.not-found {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  padding: 80px 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(182, 255, 77, 0.08),
+      transparent 55%
+    ),
+    var(--color-background);
+}
+
+.not-found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  text-align: center;
+}
+
+/* Código 404 */
+
+.not-found__code {
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-size: clamp(6rem, 18vw, 11rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+/* Encabezado */
+
+.not-found__eyebrow {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.not-found__title {
+  margin: 0 0 20px;
+  color: var(--color-text);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.not-found__description {
+  max-width: 480px;
+  margin: 0 0 36px;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Botón */
+
+.not-found__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 28px;
+  color: var(--color-background);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.not-found__button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.not-found__button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 576px) {
+  .not-found {
+    padding: 56px 0;
+  }
+
+  .not-found__eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .not-found__description {
+    margin-bottom: 28px;
+    font-size: 1rem;
+  }
+
+  .not-found__button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found__button {
+    transition: none;
+  }
+
+  .not-found__button:hover {
+    transform: none;
+  }
+}

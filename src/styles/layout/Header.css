@@ -1,0 +1,246 @@
+/* =========================================
+   FRONTROW — HEADER
+   ========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(11, 11, 15, 0.94);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  height: 100%;
+}
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo {
+  display: block;
+  width: 190px;
+  height: 55px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.site-header__link {
+  position: relative;
+  padding: 10px 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-header__link:hover,
+.site-header__link:focus-visible {
+  color: var(--color-primary);
+}
+
+.site-header__link::after {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  content: '';
+  transition: width 0.2s ease;
+}
+
+.site-header__link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   ACTIVE ROUTE — REACT ROUTER
+   ========================================= */
+
+.site-header__link--active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.site-header__link--active::after {
+  width: 100%;
+}
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.site-header__login,
+.site-header__register {
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.site-header__login {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.site-header__login:not(:disabled):hover {
+  color: var(--color-primary);
+}
+
+.site-header__register {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.site-header__register:not(:disabled):hover {
+  background-color: var(--color-primary-hover);
+}
+
+.site-header__login:disabled,
+.site-header__register:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+  .site-header__container {
+    gap: 20px;
+  }
+
+  .site-header__logo {
+    width: 155px;
+  }
+
+  .site-header__nav {
+    gap: 18px;
+  }
+
+  .site-header__actions {
+    gap: 6px;
+  }
+
+  .site-header__login,
+  .site-header__register {
+    padding: 10px 12px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .site-header {
+    height: auto;
+    min-height: var(--header-height);
+  }
+
+  .site-header__container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .site-header__logo {
+    width: 145px;
+    height: 45px;
+  }
+
+  .site-header__nav {
+    order: 3;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .site-header__link {
+    font-size: 0.85rem;
+  }
+
+  .site-header__actions {
+    gap: 4px;
+  }
+
+  .site-header__login,
+  .site-header__register {
+    min-height: 36px;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-header__logo {
+    width: 120px;
+  }
+
+  .site-header__actions {
+    gap: 2px;
+  }
+
+  .site-header__login,
+  .site-header__register {
+    padding: 8px 6px;
+    font-size: 0.7rem;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__link,
+  .site-header__link::after,
+  .site-header__login,
+  .site-header__register {
+    transition: none;
+  }
+}

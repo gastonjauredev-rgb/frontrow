@@ -1,0 +1,74 @@
+/* ========================================
+   ARTIST SEARCH
+======================================== */
+
+.artist-search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.artist-search__label {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.artist-search__input {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 18px;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.artist-search__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.artist-search__input:hover {
+  border-color: var(--color-text-muted);
+}
+
+.artist-search__input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.artist-search__input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 576px) {
+  .artist-search {
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .artist-search__input {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artist-search__input {
+    transition: none;
+  }
+}

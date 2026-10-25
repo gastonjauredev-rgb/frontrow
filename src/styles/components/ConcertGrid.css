@@ -1,0 +1,58 @@
+/* ========================================
+   CONCERT GRID
+======================================== */
+
+.concert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Estado sin resultados */
+
+.concert-grid__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 32px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.concert-grid__empty p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+/* Tablets */
+
+@media (max-width: 992px) {
+  .concert-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 576px) {
+  .concert-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .concert-grid__empty {
+    min-height: 160px;
+    padding: 24px;
+  }
+}

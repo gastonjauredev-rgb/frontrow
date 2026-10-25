@@ -1,0 +1,53 @@
+// Datos simulados para desarrollar el módulo de conciertos.
+// No representan eventos reales ni fechas confirmadas.
+
+export const concerts = [
+  {
+    id: 'concert-001',
+    artistId: 'coldplay',
+    artistName: 'Coldplay',
+    venue: 'Estadio Centenario',
+    city: 'Montevideo',
+    country: 'Uruguay',
+    date: '2027-03-20T21:00:00',
+    ticketStatus: 'coming_soon',
+    ticketUrl: null,
+    image: null,
+  },
+  {
+    id: 'concert-002',
+    artistId: 'gilsons',
+    artistName: 'Gilsons',
+    venue: 'Antel Arena',
+    city: 'Montevideo',
+    country: 'Uruguay',
+    date: '2027-04-15T20:30:00',
+    ticketStatus: 'on_sale',
+    ticketUrl: null,
+    image: null,
+  },
+  {
+    id: 'concert-003',
+    artistId: 'dua-lipa',
+    artistName: 'Dua Lipa',
+    venue: 'Movistar Arena',
+    city: 'Buenos Aires',
+    country: 'Argentina',
+    date: '2027-05-10T21:00:00',
+    ticketStatus: 'sold_out',
+    ticketUrl: null,
+    image: null,
+  },
+  {
+    id: 'concert-004',
+    artistId: 'imagine-dragons',
+    artistName: 'Imagine Dragons',
+    venue: 'Allianz Parque',
+    city: 'São Paulo',
+    country: 'Brasil',
+    date: '2027-06-12T20:00:00',
+    ticketStatus: 'coming_soon',
+    ticketUrl: null,
+    image: null,
+  },
+];
